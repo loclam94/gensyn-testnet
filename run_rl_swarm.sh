@@ -230,22 +230,11 @@ HF_TOKEN=${HF_TOKEN:-""}
 if [ -n "${HF_TOKEN}" ]; then
     HUGGINGFACE_ACCESS_TOKEN=${HF_TOKEN}
 else
-    echo -en $GREEN_TEXT
-    read -p ">> Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N] " yn
-    echo -en $RESET_TEXT
-    case $yn in
-        [Yy]*) read -p "Enter your Hugging Face access token: " HUGGINGFACE_ACCESS_TOKEN ;;
-        [Nn]*) HUGGINGFACE_ACCESS_TOKEN="None" ;;
-        *) HUGGINGFACE_ACCESS_TOKEN="None" ;;
-    esac
+    # Directly set to "None" without asking
+    HUGGINGFACE_ACCESS_TOKEN="None"
 fi
 
-echo -en $GREEN_TEXT
-read -p ">> Enter the name of the model you want to use in huggingface repo/name format, or press [Enter] to use the default model. " MODEL_NAME
-echo -en $RESET_TEXT
-
 if [ -n "$MODEL_NAME" ]; then
-    export MODEL_NAME
     echo_green ">> Using model: $MODEL_NAME"
 else
     echo_green ">> Using default model from config"
