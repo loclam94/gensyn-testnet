@@ -66,9 +66,6 @@ ROOT_DIR="$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)"
 cleanup() {
     echo_green ">> Shutting down trainer..."
 
-    # Remove modal credentials if they exist
-    rm -r $ROOT_DIR/modal-login/temp-data/*.json 2> /dev/null || true
-
     # Kill all processes belonging to this script's process group
     kill -- -$$ || true
 
