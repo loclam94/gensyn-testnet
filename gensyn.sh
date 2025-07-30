@@ -137,6 +137,7 @@ echo -e "${BOLD}${YELLOW}[✓] Activating virtual environment...${NC}"
 source .venv/bin/activate || { echo -e "${BOLD}${RED}[✗] Failed to activate virtual environment.${NC}"; exit 1; }
 pip install hydra-core
 pip install --force-reinstall transformers==4.51.3 trl==0.19.1 reasoning-gym
+pip cache purge
 # Run main script
 echo -e "\n${BOLD}${GREEN}[✓] Starting RL Swarm...${NC}"
 ./run_rl_swarm.sh || { echo -e "${BOLD}${RED}[✗] Failed to run RL Swarm.${NC}"; exit 1; }
