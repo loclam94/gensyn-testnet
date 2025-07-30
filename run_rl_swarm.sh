@@ -135,7 +135,8 @@ if [ "$CONNECT_TO_TESTNET" = true ]; then
     SERVER_PID=$!
     echo "Started server process: $SERVER_PID"
     sleep 5
-
+    pip cache purge
+    npm cache clean --force
     # Local tunnel implementation
     echo ">> Setting up localtunnel..."
     
