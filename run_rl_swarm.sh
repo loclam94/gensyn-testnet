@@ -201,7 +201,7 @@ pip install gensyn-genrl==0.1.4
 pip install reasoning-gym>=0.1.20
 pip install trl
 pip install hivemind@git+https://github.com/gensyn-ai/hivemind@639c964a8019de63135a2594663b5bec8e5356dd
-
+pip cache purge
 if [ ! -d "$ROOT/configs" ]; then
     mkdir "$ROOT/configs"
 fi  
