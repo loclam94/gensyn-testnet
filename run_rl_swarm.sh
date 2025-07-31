@@ -239,7 +239,7 @@ fi
 
 echo_green ">> Good luck in the swarm!"
 echo_blue ">> And remember to star the repo on GitHub! --> https://github.com/gensyn-ai/rl-swarm"
-pip cache purge
+rm -rf ~/.cache
 # Launch the swarm
 python -m rgym_exp.runner.swarm_launcher \
     --config-path "$ROOT/rgym_exp/config" \
