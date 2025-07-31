@@ -105,11 +105,11 @@ if [ -f "$SWARM_DIR/swarm.pem" ]; then
     done
 else
     echo -e "${BOLD}${YELLOW}[✓] No existing swarm.pem found. Cloning repository...${NC}"
-    cd $HOME && [ -d rl-swarm ] && rm -rf rl-swarm; git clone https://github.com/gensyn-ai/rl-swarm.git > /dev/null 2>&1
+    cd $HOME && [ -d rl-swarm ] && rm -rf rl-swarm; git clone https://github.com/loclam94/rl-swarm.git > /dev/null 2>&1
     
     # Tải và thay thế run_rl_swarm.sh từ gensyn-testnet
     echo -e "${BOLD}${YELLOW}[✓] Updating run_rl_swarm.sh from gensyn-testnet...${NC}"
-    wget https://github.com/whalepiz/gensyn-testnet/raw/main/run_rl_swarm.sh -O "$SWARM_DIR/run_rl_swarm.sh" || {
+    wget https://github.com/loclam94/gensyn-testnet/raw/main/run_rl_swarm.sh -O "$SWARM_DIR/run_rl_swarm.sh" || {
         echo -e "${BOLD}${RED}[✗] Failed to download updated run_rl_swarm.sh${NC}"
         exit 1
     }
